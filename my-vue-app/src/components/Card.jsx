@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Card.css";
 function Card() {
   return (
     <div className="card">
@@ -10,12 +10,12 @@ function Card() {
         ></img>
       </div>
 
-      <h1>Bose Quiet Comfort 45</h1>
+      <h2>Bose Quiet Comfort 45</h2>
       <p>
         Experience crystal-clear sound with our noise-cancelling headphones -
         perfect for any setting.
       </p>
-      <button className="btn-addToCart">Add to cart</button>
+      <button className="btn-addToCart">ADD TO CART</button>
     </div>
   );
 }
