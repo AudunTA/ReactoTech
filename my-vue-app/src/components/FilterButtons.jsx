@@ -1,37 +1,43 @@
 import React, { useState } from "react";
 import "./FilterButtons.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeadset, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHeadset,
+  faVolumeHigh,
+  faPhone,
+  faDesktop,
+  faList,
+} from "@fortawesome/free-solid-svg-icons";
 
 function FilterButtons() {
   const [icon, changeIcon] = useState([
     {
       id: 0,
-      iconsrc: "",
+      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faList} />,
       text: "All",
       status: "not-active",
     },
     {
       id: 1,
-      iconsrc: <FontAwesomeIcon icon={faHeadset} />,
+      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faHeadset} />,
       text: "Headsets",
       status: "not-active",
     },
     {
       id: 2,
-      iconsrc: "src",
+      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faDesktop} />,
       text: "Computers",
       status: "not-active",
     },
     {
       id: 3,
-      iconsrc: "src",
+      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faPhone} />,
       text: "Phones",
       status: "not-active",
     },
     {
       id: 4,
-      iconsrc: <FontAwesomeIcon icon={faVolumeHigh} />,
+      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faVolumeHigh} />,
       text: "Speakers",
       status: "not-active",
     },

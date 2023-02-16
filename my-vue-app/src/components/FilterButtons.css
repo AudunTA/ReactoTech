@@ -12,3 +12,7 @@
 .filter-container {
   text-align: center;
 }
+
+.filter-icon {
+  margin-right: 7px;
+}
