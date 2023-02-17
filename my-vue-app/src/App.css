@@ -1,3 +1,12 @@
+:root {
+  --main-color: rgba(255, 255, 255, 0.1);
+  --secondary-color: rgba(18, 18, 18, 0.2);
+  --btn-solid-color: #272727;
+  --main-text-color: #f1f1f1;
+  --border-color: #222222;
+  --btn-addCart: rgba(81, 69, 229, 0.9);
+}
+
 @font-face {
   font-family: SFpro;
   src: url(./assets/fonts/SFPRODISPLAYBOLD.OTF);
