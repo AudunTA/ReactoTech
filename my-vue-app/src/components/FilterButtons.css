@@ -10,7 +10,15 @@
 }
 
 .filter-container {
-  text-align: center;
+  width: 520px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.filter-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar on webkit browsers */
 }
 
 .filter-icon {

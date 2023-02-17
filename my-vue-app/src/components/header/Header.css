@@ -1,0 +1,17 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  height: 50px;
+}
+
+.header-icon {
+  background: rgba(81, 69, 229, 0.9);
+  color: #f1f1f1;
+  font-size: 30px;
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 66.7%;
+}
