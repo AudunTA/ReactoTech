@@ -1,0 +1,26 @@
+.searchbar-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--btn-addCart);
+  border-radius: 8px;
+  background-color: var(--searchbar-color);
+}
+.searchbar-container:focus-within {
+  transition-duration: 20ms;
+  border: 3px solid var(--btn-addCart);
+}
+.searchbar-container input {
+  flex: 1;
+  background: transparent;
+  border: transparent;
+  margin: 5px;
+}
+
+.search-icon {
+  color: #757575;
+  margin: 7px;
+}
+textarea:focus,
+input:focus {
+  outline: none;
+}

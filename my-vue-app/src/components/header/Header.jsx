@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 function Header() {
   const [theme, setTheme] = useState("dark");
@@ -20,13 +20,27 @@ function Header() {
   };
 
   return (
-    <div className="header-container">
-      <h1>Logo</h1>
-      <FontAwesomeIcon
-        className="header-icon"
-        icon={faMoon}
-        onClick={toggleTheme}
-      />
+    <div className="header-wrapper">
+      <div className="header-container">
+        <h1>Logo</h1>
+        <div className="div">
+          <FontAwesomeIcon
+            className="header-icon"
+            icon={faMoon}
+            onClick={toggleTheme}
+            size={70}
+          />
+          <FontAwesomeIcon
+            className="header-icon"
+            icon={faCartShopping}
+            size={70}
+          />
+          <img
+            className="header-profile-icon"
+            src="./src\images\avatar.png"
+          ></img>
+        </div>
+      </div>
     </div>
   );
 }
