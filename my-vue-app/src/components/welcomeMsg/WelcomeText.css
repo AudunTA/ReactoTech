@@ -2,5 +2,5 @@
   text-align: center;
 }
 .welcome-container h1 {
-  color: white;
+  color: var(--main-text-color);
 }

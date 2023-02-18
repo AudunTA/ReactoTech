@@ -1,5 +1,9 @@
 body {
-  background: linear-gradient(268.08deg, #0f0f0f 3.7%, #272727 98.16%);
+  background: linear-gradient(
+    268.08deg,
+    var(--background-gradient-1) 3.7%,
+    var(--background-gradient-2) 98.16%
+  );
   height: 3000px;
   padding: 0;
   margin: 0;

@@ -31,7 +31,7 @@ p {
   background: var(--btn-addCart);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  color: var(--main-text-color);
+  color: var(--almost-white);
 }
 
 .wrapper-img {
