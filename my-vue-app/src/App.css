@@ -9,19 +9,38 @@
   --background-gradient-2: #272727;
   --almost-white: #f1f1f1;
   --searchbar-color: #272727;
+  --bacground-blur-color: #222b1f;
 }
 
 @font-face {
   font-family: SFpro;
   src: url(./assets/fonts/SFPRODISPLAYBOLD.OTF);
 }
+.wrapper-App {
+  margin: 100px 15px;
+}
+
 .App {
-  margin: 15px;
+  margin: auto;
   max-width: 1400px;
 }
+
 p,
 h1,
 h2,
 button {
   font-family: SFpro;
+}
+
+.flex-div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 9px;
+}
+
+@media screen and (min-width: 1000px) {
+  .flex-div {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
 }

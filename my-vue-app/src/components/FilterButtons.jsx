@@ -42,7 +42,7 @@ function FilterButtons() {
       status: "not-active",
     },
   ]);
-  console.log(icon);
+
   return (
     <div className="filter-container">
       <div>

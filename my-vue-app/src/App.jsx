@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./components/Card";
 import "./App.css";
 import Text from "./components/Text";
@@ -9,20 +9,55 @@ import Loader from "./components/loader/Loader";
 import Searchbar from "./components/searchbar/Searchbar";
 import LoaderSpecific from "./components/loader-specific/LoaderSpecific";
 import Cart from "./components/cart/Cart";
+
+const url = "https://api.noroff.dev/api/v1/online-shop";
 function App() {
-  const [render, setRender] = useState(true);
+  const [posts, setPosts] = useState([]);
+  //displays loader untill api gets result.
+  const [loader, setLoader] = useState(true);
+  useEffect(() => {
+    // Function that gets our posts
+    async function getData() {
+      const response = await fetch(url);
+      const json = await response.json();
+      console.log(json.statusCode);
+      if (json.statusCode !== 404) {
+        setLoader(false);
+      }
+      // Setting our `posts` state to the API data we received
+      setPosts(json);
+    }
+    getData();
+  }, []);
+  console.log(posts);
   return (
     <>
       <Header />
-      <div className="App">
-        <WelcomeText />
-        <Searchbar />
-        <FilterButtons />
-        <Text />
-        <Card />
-        {render ? <Loader /> : ""}
-        {render ? <LoaderSpecific /> : ""}
-        <Cart />
+      <div className="wrapper-App">
+        <div className="App">
+          <WelcomeText />
+          <Searchbar />
+          <FilterButtons />
+          <Text />
+          <div className="flex-div">
+            {!loader ? (
+              posts.map((ele) => {
+                return (
+                  <Card
+                    title={ele.title}
+                    imgurl={ele.imageUrl}
+                    description={ele.description}
+                  />
+                );
+              })
+            ) : (
+              <Loader />
+            )}
+          </div>
+          <Loader />
+          <LoaderSpecific />
+          <Cart />
+        </div>
       </div>
     </>
   );

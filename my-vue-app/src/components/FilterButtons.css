@@ -11,6 +11,7 @@
 
 .filter-container {
   width: 520px;
+  margin: 15px auto;
   overflow-x: auto;
   white-space: nowrap;
   -ms-overflow-style: none; /* IE and Edge */
