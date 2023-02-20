@@ -20,7 +20,9 @@ body {
   background: var(--bacground-blur-color);
   filter: blur(250px);
 }
-
+.margin-top {
+  margin-top: 100px;
+}
 @media screen and (min-width: 700px) {
   .background-color {
     left: -436px;

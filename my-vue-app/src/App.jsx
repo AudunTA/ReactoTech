@@ -13,11 +13,10 @@ import { Outlet } from "react-router-dom";
 import { createContext } from "react";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
-function App() {
+function App(props) {
   const [posts, setPosts] = useState([]);
   //displays loader untill api gets result.
   const [loader, setLoader] = useState(true);
-  const [cartitems, setCartitems] = useState([]);
   useEffect(() => {
     // Function that gets our posts
     async function getData() {
@@ -33,20 +32,17 @@ function App() {
     getData();
   }, []);
   console.log(posts);
-  const addToCart = (ele) => {
-    setCartitems([...cartitems, ele]);
-  };
+
   return (
     <>
       <Header />
       <div className="wrapper-App">
         <div className="App">
-          <div>cartitems: {cartitems}</div>
           <WelcomeText />
           <Searchbar />
           <FilterButtons />
           <Text />
-          <Outlet title={cartitems} />
+          <Outlet />
           <div className="flex-div">
             {!loader ? (
               posts.map((ele) => {
@@ -57,7 +53,7 @@ function App() {
                     title={ele.title}
                     imgurl={ele.imageUrl}
                     description={ele.description}
-                    addToCart={addToCart}
+                    addToCart={props.addToCart}
                   />
                 );
               })

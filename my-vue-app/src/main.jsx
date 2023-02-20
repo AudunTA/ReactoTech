@@ -5,13 +5,27 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import Cart from "./components/cart/Cart";
+import { useState } from "react";
 //REMOVE IF ERRORS
-import { createContext } from "react";
+
+function Main() {
+  const [cartitems, setCartitems] = useState([]);
+
+  const addToCart = (ele) => {
+    setCartitems([...cartitems, ele]);
+  };
+  return (
+    <div>
+      <div className="margin-top">cartitems: {cartitems}</div>
+      <App addToCart={addToCart} />
+    </div>
+  );
+}
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Main />,
     errorElement: <ErrorPage />,
     children: [
       {
