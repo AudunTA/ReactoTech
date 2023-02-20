@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
+import { Outlet, Link } from "react-router-dom";
 function Header() {
   const [theme, setTheme] = useState();
 
@@ -44,11 +45,14 @@ function Header() {
             onClick={toggleTheme}
             size={70}
           />
-          <FontAwesomeIcon
-            className="header-icon"
-            icon={faCartShopping}
-            size={70}
-          />
+          <Link to={`/cart`} style={{ textDecoration: "none" }}>
+            {" "}
+            <FontAwesomeIcon
+              className="header-icon"
+              icon={faCartShopping}
+              size={70}
+            />{" "}
+          </Link>
           <img
             className="header-profile-icon"
             src="./src\images\avatar.png"

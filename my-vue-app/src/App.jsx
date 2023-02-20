@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Card from "./components/Card";
 import "./App.css";
 import Text from "./components/Text";
@@ -9,12 +9,15 @@ import Loader from "./components/loader/Loader";
 import Searchbar from "./components/searchbar/Searchbar";
 import LoaderSpecific from "./components/loader-specific/LoaderSpecific";
 import Cart from "./components/cart/Cart";
+import { Outlet } from "react-router-dom";
+import { createContext } from "react";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
 function App() {
   const [posts, setPosts] = useState([]);
   //displays loader untill api gets result.
   const [loader, setLoader] = useState(true);
+  const [cartitems, setCartitems] = useState([]);
   useEffect(() => {
     // Function that gets our posts
     async function getData() {
@@ -30,24 +33,31 @@ function App() {
     getData();
   }, []);
   console.log(posts);
+  const addToCart = (ele) => {
+    setCartitems([...cartitems, ele]);
+  };
   return (
     <>
       <Header />
       <div className="wrapper-App">
         <div className="App">
+          <div>cartitems: {cartitems}</div>
           <WelcomeText />
           <Searchbar />
           <FilterButtons />
           <Text />
+          <Outlet />
           <div className="flex-div">
             {!loader ? (
               posts.map((ele) => {
-                console.log(ele.tags);
+                console.log(ele);
                 return (
                   <Card
+                    fullitem={ele}
                     title={ele.title}
                     imgurl={ele.imageUrl}
                     description={ele.description}
+                    addToCart={addToCart}
                   />
                 );
               })
@@ -57,7 +67,6 @@ function App() {
           </div>
           <Loader />
           <LoaderSpecific />
-          <Cart />
         </div>
       </div>
     </>
