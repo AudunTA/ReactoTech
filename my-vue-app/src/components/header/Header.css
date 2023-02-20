@@ -3,14 +3,16 @@
   width: 100%;
   background-color: var(--searchbar-color);
   top: 0;
+  border-bottom: 1px solid var(--border-color);
 }
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--border-color);
+
   height: 50px;
-  margin: 0 15px;
+  max-width: 1400px;
+  margin: auto;
 }
 .header-container .header-icon {
   width: 20px;
@@ -27,4 +29,10 @@
 .header-profile-icon {
   width: 30px;
   height: 30px;
+}
+
+@media screen and (max-width: 1400px) {
+  .header-container {
+    margin: 0 15px;
+  }
 }
