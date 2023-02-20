@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./FilterButtons.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faHeadset,
+  faDesktop,
   faVolumeHigh,
   faPhone,
-  faDesktop,
+  faShoePrints,
   faList,
+  faSprayCanSparkles,
 } from "@fortawesome/free-solid-svg-icons";
 
 function FilterButtons() {
@@ -19,20 +20,22 @@ function FilterButtons() {
     },
     {
       id: 1,
-      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faHeadset} />,
-      text: "Headsets",
+      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faDesktop} />,
+      text: "Electronics",
       status: "not-active",
     },
     {
       id: 2,
-      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faDesktop} />,
-      text: "Computers",
+      iconsrc: (
+        <FontAwesomeIcon className="filter-icon" icon={faSprayCanSparkles} />
+      ),
+      text: "Perfume",
       status: "not-active",
     },
     {
       id: 3,
-      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faPhone} />,
-      text: "Phones",
+      iconsrc: <FontAwesomeIcon className="filter-icon" icon={faShoePrints} />,
+      text: "Shoes",
       status: "not-active",
     },
     {

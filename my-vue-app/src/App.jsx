@@ -42,6 +42,7 @@ function App() {
           <div className="flex-div">
             {!loader ? (
               posts.map((ele) => {
+                console.log(ele.tags);
                 return (
                   <Card
                     title={ele.title}
