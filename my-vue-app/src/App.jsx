@@ -46,7 +46,7 @@ function App() {
           <Searchbar />
           <FilterButtons />
           <Text />
-          <Outlet />
+          <Outlet title={cartitems} />
           <div className="flex-div">
             {!loader ? (
               posts.map((ele) => {
