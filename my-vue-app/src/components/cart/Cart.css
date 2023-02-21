@@ -12,12 +12,13 @@
   background-color: var(--secondary-color);
   border-radius: 8px;
   display: flex;
+  margin: 10px 0px;
 }
 .cart-img {
   background-color: var(--secondary-color);
   margin: 7px;
   border-radius: 8px;
-  max-width: 70px;
+  max-width: 100px;
 }
 .cart-container h2,
 p {

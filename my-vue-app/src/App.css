@@ -9,7 +9,7 @@
   --background-gradient-2: #272727;
   --almost-white: #f1f1f1;
   --searchbar-color: #272727;
-  --bacground-blur-color: #222b1f;
+  --bacground-blur-color: rgba(81, 69, 229, 0.5);
 }
 
 @font-face {

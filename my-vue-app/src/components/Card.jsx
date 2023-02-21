@@ -1,19 +1,25 @@
-import React from "react";
-import "./Card.css";
+import React, { useState } from "react";
+import "./card.css";
+
 function Card(props) {
-  const handleClick = () => {
-    props.addToCart(props.title);
+  const [clicked, setClicked] = useState(false);
+  const handleCartClick = () => {
+    props.addProduct(props.fullitem);
+    setClicked(true);
   };
   return (
     <div className="card">
       <div className="wrapper-img">
         <img src={props.imgurl} className="img-card"></img>
       </div>
-
       <h2>{props.title}</h2>
       <p>{props.description}</p>
-      <button onClick={handleClick} className="btn-addToCart">
-        ADD TO CART
+      <button
+        onClick={handleCartClick}
+        disabled={clicked}
+        className="btn-addToCart"
+      >
+        {clicked ? "ADDED TO CART" : "ADD TO CART"}
       </button>
     </div>
   );
