@@ -12,6 +12,7 @@ import Cart from "./components/cart/Cart";
 import { create } from "zustand";
 import { shallow } from "zustand/shallow";
 import { Outlet } from "react-router-dom";
+import { cartStatus } from "./components/header/Header";
 
 const url = "https://api.noroff.dev/api/v1/online-shop";
 
@@ -23,8 +24,8 @@ export const useCartItems = create((set, get) => ({
 
 function App() {
   const [posts, setPosts] = useState([]);
-  //displays loader untill api gets result.
   const [loader, setLoader] = useState(true);
+  const [showCart, setShowCart] = useState(cartStatus.getState().open);
 
   const cartItems = useCartItems();
   console.log(cartItems.products);
@@ -42,37 +43,54 @@ function App() {
     }
     getData();
   }, []);
+
+  useEffect(() => {
+    // Subscribe to changes in the cartStatus store and update the showCart state
+    const unsubscribe = cartStatus.subscribe(
+      (newState) => setShowCart(newState.open),
+      shallow
+    );
+
+    // Unsubscribe when the component is unmounted
+    return unsubscribe;
+  }, []);
+
+  console.log(showCart);
   return (
     <>
       <Header />
       <div className="wrapper-App">
-        <div className="App">
-          <WelcomeText />
-          <h1>CART ITEMS: {cartItems.products.length}</h1>
-          <Searchbar />
-          <FilterButtons />
-          <Text />
-          <Outlet />
-          <div className="flex-div">
-            {!loader ? (
-              posts.map((ele) => {
-                return (
-                  <Card
-                    key={ele.id}
-                    fullitem={ele}
-                    title={ele.title}
-                    imgurl={ele.imageUrl}
-                    description={ele.description}
-                    addProduct={cartItems.addProduct}
-                  />
-                );
-              })
-            ) : (
-              <Loader />
-            )}
+        {!showCart ? (
+          <div className="App">
+            <WelcomeText />
+            <h1>CART ITEMS: {cartItems.products.length}</h1>
+            <Searchbar />
+            <FilterButtons />
+            <Text />
+
+            <div className="flex-div">
+              {!loader ? (
+                posts.map((ele) => {
+                  return (
+                    <Card
+                      key={ele.id}
+                      fullitem={ele}
+                      title={ele.title}
+                      imgurl={ele.imageUrl}
+                      description={ele.description}
+                      addProduct={cartItems.addProduct}
+                    />
+                  );
+                })
+              ) : (
+                <Loader />
+              )}
+            </div>
+            <Loader />
           </div>
-          <Loader />
-        </div>
+        ) : (
+          <Outlet />
+        )}
       </div>
     </>
   );
