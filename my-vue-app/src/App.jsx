@@ -1,34 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
-import Card from "./components/Card";
 import "./App.css";
-import Text from "./components/Text";
-import FilterButtons from "./components/FilterButtons";
-import WelcomeText from "./components/welcomeMsg/WelcomeText";
 import Header from "./components/header/Header";
-import Loader from "./components/loader/Loader";
-import Searchbar from "./components/searchbar/Searchbar";
-import LoaderSpecific from "./components/loader-specific/LoaderSpecific";
-import Cart from "./components/cart/Cart";
 import { create } from "zustand";
 import { shallow } from "zustand/shallow";
-import { Outlet } from "react-router-dom";
 import { cartStatus } from "./components/header/Header";
+import { lazy, Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
 
+const Cart = lazy(() => import("./components/cart/Cart"));
+const ProductPage = lazy(() => import("./components/pages/ProductPage"));
 const url = "https://api.noroff.dev/api/v1/online-shop";
-
-export const useCartItems = create((set, get) => ({
-  products: [],
-  addProduct: (product) =>
-    set((state) => ({ products: [...state.products, product] })),
-}));
 
 function App() {
   const [posts, setPosts] = useState([]);
   const [loader, setLoader] = useState(true);
+  const [cartItems, setCartItems] = useState([]);
   const [showCart, setShowCart] = useState(cartStatus.getState().open);
-
-  const cartItems = useCartItems();
-  console.log(cartItems.products);
 
   useEffect(() => {
     // Function that gets our posts
@@ -43,54 +30,27 @@ function App() {
     }
     getData();
   }, []);
-
-  useEffect(() => {
-    // Subscribe to changes in the cartStatus store and update the showCart state
-    const unsubscribe = cartStatus.subscribe(
-      (newState) => setShowCart(newState.open),
-      shallow
-    );
-
-    // Unsubscribe when the component is unmounted
-    return unsubscribe;
-  }, []);
-
-  console.log(showCart);
+  const addToCart = (ele) => {
+    cartItems.push(ele);
+  };
+  console.log("test");
   return (
     <>
       <Header />
-      <div className="wrapper-App">
-        {!showCart ? (
-          <div className="App">
-            <WelcomeText />
-            <h1>CART ITEMS: {cartItems.products.length}</h1>
-            <Searchbar />
-            <FilterButtons />
-            <Text />
 
-            <div className="flex-div">
-              {!loader ? (
-                posts.map((ele) => {
-                  return (
-                    <Card
-                      key={ele.id}
-                      fullitem={ele}
-                      title={ele.title}
-                      imgurl={ele.imageUrl}
-                      description={ele.description}
-                      addProduct={cartItems.addProduct}
-                    />
-                  );
-                })
-              ) : (
-                <Loader />
-              )}
-            </div>
-            <Loader />
-          </div>
-        ) : (
-          <Outlet />
-        )}
+      <div className="marin-top">
+        <button onClick={() => console.log(cartItems)}>
+          log the cartitems
+        </button>
+        <Suspense fallback={<div className="container">Loading...</div>}>
+          <Routes>
+            <Route path="/cart" element={<Cart cart={cartItems} />} />
+            <Route
+              path="/"
+              element={<ProductPage products={posts} toCart={addToCart} />}
+            />
+          </Routes>
+        </Suspense>
       </div>
     </>
   );

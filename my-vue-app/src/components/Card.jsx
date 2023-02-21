@@ -4,7 +4,7 @@ import "./card.css";
 function Card(props) {
   const [clicked, setClicked] = useState(false);
   const handleCartClick = () => {
-    props.addProduct(props.fullitem);
+    props.toCart(props.fullitem);
     setClicked(true);
   };
   return (

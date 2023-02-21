@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { create } from "zustand";
 
 export const cartStatus = create((set, get) => ({
@@ -56,7 +56,7 @@ function Header() {
             onClick={toggleTheme}
             size={70}
           />
-          <Link to={`/cart`} style={{ textDecoration: "none" }}>
+          <Link to={"/cart"} style={{ textDecoration: "none" }}>
             {" "}
             <FontAwesomeIcon
               className="header-icon"

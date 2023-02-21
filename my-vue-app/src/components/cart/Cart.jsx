@@ -1,18 +1,15 @@
 import React from "react";
 import "./Cart.css";
 import { Outlet, Link } from "react-router-dom";
-import { shallow } from "zustand/shallow";
-import { useCartItems } from "../../App";
+
 function Cart(props) {
-  const cartItems = useCartItems();
-  const products = cartItems.products;
+  const products = props.cart;
   console.log(products);
   return (
     <>
       <Link to="/">
         <button>Home</button>
       </Link>
-      <div>items in cart: {props.title}</div>
       <div className="cart-container">
         {products.map((ele) => {
           return (

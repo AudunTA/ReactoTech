@@ -37,7 +37,9 @@ button {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 9px;
 }
-
+.marin-top {
+  margin-top: 100px;
+}
 @media screen and (min-width: 1000px) {
   .flex-div {
     grid-template-columns: repeat(3, 1fr);
