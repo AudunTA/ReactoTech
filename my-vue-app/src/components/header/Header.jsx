@@ -34,10 +34,10 @@ function Header() {
   const settingTheme = (theme) => {
     if (theme === "light") {
       document.documentElement.style.cssText =
-        "--main-color: #FFFFFF; --secondary-color: #F8FAFB; --btn-solid-color: #FFFFFF; --main-text-color: #272C45; --border-color: #E4E4E7; --btn-addCart: rgba(81, 69, 229, 0.9); --background-gradient-1:#f1f1f1; --background-gradient-2: #f1f1f1; --bacground-blur-color: #FAFAFB; --searchbar-color: #FFFFFF;   --cart-item-bg: #F1F1F1;";
+        "--main-color: #FFFFFF; --secondary-color: #F8FAFB; --btn-solid-color: #FFFFFF; --main-text-color: #272C45; --border-color: #E4E4E7; --btn-addCart: rgba(81, 69, 229, 0.9); --background-gradient-1:#f1f1f1; --background-gradient-2: #f1f1f1; --bacground-blur-color: #FFFFFF; --searchbar-color: #FFFFFF;   --cart-item-bg: #F1F1F1; --img-brightness: brightness(100%);";
     } else {
       document.documentElement.style.cssText =
-        "--main-color: rgba(255, 255, 255, 0.1); --secondary-color: rgba(18, 18, 18, 0.2); --btn-solid-color: #272727; --main-text-color: #f1f1f1; --border-color: #222222; --btn-addCart: rgba(81, 69, 229, 0.9); --background-gradient-1:#0f0f0f; --background-gradient-2: #272727; --bacground-blur-color: rgba(81, 69, 229, 0.5); --searchbar-color: #272727;   --cart-item-bg: rgba(18, 18, 18, 0.2)";
+        "--main-color: rgba(255, 255, 255, 0.1); --secondary-color: rgba(18, 18, 18, 0.2); --btn-solid-color: #272727; --main-text-color: #f1f1f1; --border-color: #222222; --btn-addCart: rgba(81, 69, 229, 0.9); --background-gradient-1:#0f0f0f; --background-gradient-2: #272727; --bacground-blur-color: rgb(106, 188, 202); --searchbar-color: #272727;   --cart-item-bg: rgba(18, 18, 18, 0.2); --img-brightness: brightness(60%);";
     }
   };
   const updateCartStatus = () => {

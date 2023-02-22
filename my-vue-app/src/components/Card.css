@@ -3,10 +3,16 @@
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 7px;
-}
-.card-container {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+.wrapper-img {
+  min-height: 150px;
+  max-height: 367px;
+  border-radius: 8px;
+}
+
 .card h2,
 p {
   color: var(--main-text-color);
@@ -31,19 +37,14 @@ p {
   color: var(--almost-white);
 }
 
-.wrapper-img {
-  border-radius: 8px;
-}
-.img-card {
-  width: 100%;
-  border-radius: 8px;
-}
-
 @media screen and (min-width: 700px) {
   .card h2 {
     font-size: 1.5em;
   }
   .card p {
     font-size: 1em;
+  }
+  .wrapper-img {
+    min-height: 250px;
   }
 }

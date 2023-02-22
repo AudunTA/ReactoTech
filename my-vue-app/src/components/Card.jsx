@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./card.css";
+import "./Card.css";
 
 function Card(props) {
   const [clicked, setClicked] = useState(false);
@@ -9,11 +9,20 @@ function Card(props) {
   };
   return (
     <div className="card">
-      <div className="wrapper-img">
-        <img src={props.imgurl} className="img-card"></img>
+      <div className="flex-top-section">
+        <div
+          className="wrapper-img"
+          style={{
+            backgroundImage: `url(${props.imgurl})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></div>
+        <h2>{props.title}</h2>
+        <p>{props.description}</p>
       </div>
-      <h2>{props.title}</h2>
-      <p>{props.description}</p>
+
       <button
         onClick={handleCartClick}
         disabled={clicked}
