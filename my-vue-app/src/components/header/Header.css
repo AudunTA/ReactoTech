@@ -1,8 +1,10 @@
 .header-wrapper {
   position: fixed;
   width: 100%;
-  background-color: var(--searchbar-color);
+  background-color: var(--main-color);
+  backdrop-filter: blur(20px);
   top: 0;
+  z-index: 99;
   border-bottom: 1px solid var(--border-color);
 }
 .header-container {

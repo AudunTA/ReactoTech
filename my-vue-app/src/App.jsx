@@ -16,7 +16,7 @@ function App() {
   const [loader, setLoader] = useState(true);
   const [cartItems, setCartItems] = useState([]);
   const [showCart, setShowCart] = useState(cartStatus.getState().open);
-
+  const [numPosts, setNumPosts] = useState(4);
   useEffect(() => {
     // Function that gets our posts
     async function getData() {
@@ -27,24 +27,33 @@ function App() {
       }
       // Setting our `posts` state to the API data we received
       setPosts(json);
+      console.log("test");
     }
     getData();
   }, []);
   const addToCart = (ele) => {
     cartItems.push(ele);
   };
-  console.log("test");
+  const handleSeeAll = () => {
+    setNumPosts(100);
+  };
   return (
     <>
       <Header />
-
-      <button onClick={() => console.log(cartItems)}>log the cartitems</button>
       <Suspense fallback={<div className="container">Loading...</div>}>
         <Routes>
           <Route path="/cart" element={<Cart cart={cartItems} />} />
           <Route
             path="/"
-            element={<ProductPage products={posts} toCart={addToCart} />}
+            element={
+              <ProductPage
+                products={posts}
+                toCart={addToCart}
+                numPosts={numPosts}
+                setPosts={handleSeeAll}
+                loader={loader}
+              />
+            }
           />
         </Routes>
       </Suspense>

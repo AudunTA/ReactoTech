@@ -46,3 +46,9 @@ button {
     grid-gap: 20px;
   }
 }
+
+@media screen and (min-width: 1300px) {
+  .flex-div {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

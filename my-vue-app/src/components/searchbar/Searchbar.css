@@ -8,6 +8,7 @@
   margin: auto;
   position: relative;
 }
+
 .searchbar-container:focus-within {
   transition-duration: 20ms;
   border: 3px solid var(--btn-addCart);
@@ -17,6 +18,7 @@
   background: transparent;
   border: transparent;
   margin: 5px;
+  color: var(--main-text-color);
 }
 
 .search-icon {
@@ -30,11 +32,15 @@ input:focus {
 
 .search-content {
   position: absolute;
-  background-color: var(--searchbar-color);
+  background-color: var(--main-color);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--btn-addCart);
   border-radius: 8px;
   margin-top: 40px;
   top: 0;
   left: 0;
   width: 100%;
+}
+.search-content:empty {
+  display: none;
 }
