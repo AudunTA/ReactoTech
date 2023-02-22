@@ -12,7 +12,7 @@ function ProductPage(props) {
     <div className="wrapper-App">
       <div className="App">
         <WelcomeText />
-        <Searchbar />
+        <Searchbar prodcuts={posts} />
         <FilterButtons />
         <Text />
 

@@ -19,6 +19,8 @@
   margin: 7px;
   border-radius: 8px;
   max-width: 100px;
+  height: 100%;
+  object-fit: cover;
 }
 .cart-container h2,
 p {

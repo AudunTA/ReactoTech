@@ -38,20 +38,16 @@ function App() {
     <>
       <Header />
 
-      <div className="marin-top">
-        <button onClick={() => console.log(cartItems)}>
-          log the cartitems
-        </button>
-        <Suspense fallback={<div className="container">Loading...</div>}>
-          <Routes>
-            <Route path="/cart" element={<Cart cart={cartItems} />} />
-            <Route
-              path="/"
-              element={<ProductPage products={posts} toCart={addToCart} />}
-            />
-          </Routes>
-        </Suspense>
-      </div>
+      <button onClick={() => console.log(cartItems)}>log the cartitems</button>
+      <Suspense fallback={<div className="container">Loading...</div>}>
+        <Routes>
+          <Route path="/cart" element={<Cart cart={cartItems} />} />
+          <Route
+            path="/"
+            element={<ProductPage products={posts} toCart={addToCart} />}
+          />
+        </Routes>
+      </Suspense>
     </>
   );
 }

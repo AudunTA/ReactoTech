@@ -6,6 +6,7 @@
   background-color: var(--searchbar-color);
   max-width: 700px;
   margin: auto;
+  position: relative;
 }
 .searchbar-container:focus-within {
   transition-duration: 20ms;
@@ -25,4 +26,15 @@
 textarea:focus,
 input:focus {
   outline: none;
+}
+
+.search-content {
+  position: absolute;
+  background-color: var(--searchbar-color);
+  border: 1px solid var(--btn-addCart);
+  border-radius: 8px;
+  margin-top: 40px;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
