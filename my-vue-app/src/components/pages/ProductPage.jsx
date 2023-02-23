@@ -40,16 +40,7 @@ function ProductPage(props) {
             </>
           ) : (
             posts.slice(0, numberPosts).map((ele) => {
-              return (
-                <Card
-                  key={ele.id}
-                  fullitem={ele}
-                  title={ele.title}
-                  imgurl={ele.imageUrl}
-                  description={ele.description}
-                  toCart={toCart}
-                />
-              );
+              return <Card key={ele.id} fullitem={ele} toCart={toCart} />;
             })
           )}
         </div>

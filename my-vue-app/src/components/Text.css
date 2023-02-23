@@ -3,7 +3,10 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.btn_SeeAll {
+  margin-right: 7px;
+  cursor: pointer;
+}
 .text-container h2 {
   color: var(--main-text-color);
 }

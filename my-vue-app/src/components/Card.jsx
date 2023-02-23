@@ -7,29 +7,52 @@ function Card(props) {
     props.toCart(props.fullitem);
     setClicked(true);
   };
+  console.log(props.fullitem.price - props.fullitem.discountedPrice);
   return (
     <div className="card">
       <div className="flex-top-section">
+        {props.fullitem.discountedPrice < props.fullitem.price ? (
+          <p className="percentage-discount">
+            -
+            {(
+              ((props.fullitem.price - props.fullitem.discountedPrice) * 100) /
+              props.fullitem.price
+            ).toFixed()}
+            %
+          </p>
+        ) : (
+          ""
+        )}
+
         <div
           className="wrapper-img"
           style={{
-            backgroundImage: `url(${props.imgurl})`,
+            backgroundImage: `url(${props.fullitem.imageUrl})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }}
         ></div>
-        <h2>{props.title}</h2>
-        <p>{props.description}</p>
+        <h2>{props.fullitem.title}</h2>
+        <p>{props.fullitem.description}</p>
       </div>
-
-      <button
-        onClick={handleCartClick}
-        disabled={clicked}
-        className="btn-addToCart"
-      >
-        {clicked ? "ADDED TO CART" : "ADD TO CART"}
-      </button>
+      <div className="bottom-section">
+        {props.fullitem.discountedPrice < props.fullitem.price ? (
+          <div className="price-displayed">
+            <p className="original-price">{props.fullitem.price}KR</p>{" "}
+            <p className="new-price">{props.fullitem.discountedPrice}</p>
+          </div>
+        ) : (
+          <p>{props.fullitem.price}KR</p>
+        )}
+        <button
+          onClick={handleCartClick}
+          disabled={clicked}
+          className="btn-addToCart"
+        >
+          {clicked ? "ADDED TO CART" : "ADD TO CART"}
+        </button>
+      </div>
     </div>
   );
 }

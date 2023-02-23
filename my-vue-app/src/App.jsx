@@ -26,20 +26,20 @@ function App() {
         setLoader(false);
       }
       // Setting our `posts` state to the API data we received
+      console.log(json);
       setPosts(json);
-      console.log("test");
     }
     getData();
   }, []);
   const addToCart = (ele) => {
-    cartItems.push(ele);
+    setCartItems([...cartItems, ele]);
   };
   const handleSeeAll = () => {
     setNumPosts(100);
   };
   return (
     <>
-      <Header />
+      <Header numCartItem={cartItems.length} />
       <Suspense fallback={<div className="container">Loading...</div>}>
         <Routes>
           <Route path="/cart" element={<Cart cart={cartItems} />} />
@@ -57,6 +57,9 @@ function App() {
           />
         </Routes>
       </Suspense>
+      <button onClick={() => console.log(cartItems.length)}>
+        log cartitems
+      </button>
     </>
   );
 }

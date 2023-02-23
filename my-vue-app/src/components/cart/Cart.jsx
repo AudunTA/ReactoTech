@@ -13,8 +13,9 @@ function Cart(props) {
           <Link to="/">
             <FontAwesomeIcon className="back-icon" icon={faAngleLeft} />
           </Link>
-          <h2 className="order-text">Order Summary</h2>
+
           <div className="cart-container">
+            <h2 className="order-text">Order Summary</h2>
             {products.map((ele) => {
               totalprice = totalprice + ele.price;
               return (

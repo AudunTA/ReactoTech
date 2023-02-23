@@ -10,7 +10,8 @@ export const cartStatus = create((set, get) => ({
   toggleOpen: () => set((state) => ({ open: !state.open })),
 }));
 
-function Header() {
+function Header(props) {
+  let numCart = props.numCartItem;
   const [theme, setTheme] = useState();
 
   useEffect(() => {
@@ -49,26 +50,35 @@ function Header() {
     <div className="header-wrapper">
       <div className="header-container">
         <h1>Logo</h1>
-        <div className="div">
-          <FontAwesomeIcon
-            className="header-icon"
-            icon={faMoon}
-            onClick={toggleTheme}
-            size={70}
-          />
-          <Link to={"/cart"} style={{ textDecoration: "none" }}>
-            {" "}
+        <div className="div-flex">
+          <div className="container-icon">
             <FontAwesomeIcon
               className="header-icon"
-              icon={faCartShopping}
+              icon={faMoon}
+              onClick={toggleTheme}
               size={70}
-              onClick={updateCartStatus}
-            />{" "}
-          </Link>
-          <img
-            className="header-profile-icon"
-            src="./src\images\avatar.png"
-          ></img>
+            />
+          </div>
+          <div className="container-icon cart-header">
+            <Link to={"/cart"} style={{ textDecoration: "none" }}>
+              {" "}
+              <FontAwesomeIcon
+                className="header-icon"
+                icon={faCartShopping}
+                size={70}
+                onClick={updateCartStatus}
+              />{" "}
+            </Link>
+            <div className="num-cart">
+              <p>{numCart}</p>
+            </div>
+          </div>
+          <div className="container-icon">
+            <img
+              className="header-profile-icon"
+              src="./src\images\avatar.png"
+            ></img>
+          </div>
         </div>
       </div>
     </div>
