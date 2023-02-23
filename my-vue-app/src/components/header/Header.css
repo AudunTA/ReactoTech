@@ -34,15 +34,11 @@
 }
 .num-cart {
   position: absolute;
-  top: -25px;
+  top: -20px;
   margin-left: 20px;
 }
 .num-cart p {
   font-size: 15px;
-  background-color: #b24e46;
-
-  padding: 5px;
-  border-radius: 66.7%;
 }
 .header-profile-icon {
   width: 30px;

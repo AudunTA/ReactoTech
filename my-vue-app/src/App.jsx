@@ -6,7 +6,7 @@ import { shallow } from "zustand/shallow";
 import { cartStatus } from "./components/header/Header";
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-
+import Contact from "./components/pages/Contact";
 const Cart = lazy(() => import("./components/cart/Cart"));
 const ProductPage = lazy(() => import("./components/pages/ProductPage"));
 const url = "https://api.noroff.dev/api/v1/online-shop";
@@ -55,6 +55,7 @@ function App() {
               />
             }
           />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Suspense>
       <button onClick={() => console.log(cartItems.length)}>

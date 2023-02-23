@@ -12,6 +12,7 @@ function ProductPage(props) {
   let numberPosts = props.numPosts;
   let setPosts = props.setPosts;
   const [shouldRender, setShouldRender] = useState(true);
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,6 +23,20 @@ function ProductPage(props) {
       clearTimeout(timer);
     };
   }, [props.loader]);
+
+  // posts.map((ele) => {
+  //   console.log(ele.reviews.length, "YOOOOOOO");
+  //   console.log(ele.reviews);
+  //   if (ele.reviews) {
+  //     for (let i = 0; ele.reviews.length; i++) {
+  //       console.log("NYYYYYYYYYYYYYYYYYYYYYYYYYYY ", i);
+  //       console.log(ele.reviews[i].length);
+  //       console.log(ele.reviews[i]);
+  //       setReviews([...reviews, ele.reviews[i]]);
+  //     }
+  //   }
+  // });
+
   return (
     <div className="wrapper-App">
       <div className="App">
@@ -45,6 +60,7 @@ function ProductPage(props) {
           )}
         </div>
       </div>
+      <button onClick={() => console.log(reviews)}>CLICK REVIEWS</button>
     </div>
   );
 }

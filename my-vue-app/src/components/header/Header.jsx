@@ -51,6 +51,7 @@ function Header(props) {
       <div className="header-container">
         <h1>Logo</h1>
         <div className="div-flex">
+          <Link to={"/contact"}>Contact</Link>
           <div className="container-icon">
             <FontAwesomeIcon
               className="header-icon"
@@ -59,6 +60,7 @@ function Header(props) {
               size={70}
             />
           </div>
+
           <div className="container-icon cart-header">
             <Link to={"/cart"} style={{ textDecoration: "none" }}>
               {" "}

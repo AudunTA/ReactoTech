@@ -17,7 +17,12 @@ function Cart(props) {
           <div className="cart-container">
             <h2 className="order-text">Order Summary</h2>
             {products.map((ele) => {
-              totalprice = totalprice + ele.price;
+              if (ele.discountedPrice < ele.price) {
+                totalprice = totalprice + ele.discountedPrice;
+              } else {
+                totalprice = totalprice + ele.price;
+              }
+
               return (
                 <div className="cart-item" key={ele.key}>
                   <div className="cart-img-container">
@@ -26,7 +31,14 @@ function Cart(props) {
                   <div className="cart-short-description">
                     <h2>{ele.title}</h2>
                     <p>{ele.description}</p>
-                    <p>{ele.price}</p>
+                    {ele.discountedPrice < ele.price ? (
+                      <div className="price-displayed">
+                        <p className="original-price">{ele.price}KR</p>{" "}
+                        <p className="new-price">{ele.discountedPrice}</p>
+                      </div>
+                    ) : (
+                      <p>{ele.price}KR</p>
+                    )}
                   </div>
                 </div>
               );
