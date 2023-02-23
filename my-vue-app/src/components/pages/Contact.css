@@ -1,4 +1,57 @@
 .container-contact {
   border: 1px solid var(--btn-addCart);
   border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+  background-color: var(--main-color);
+}
+
+.contact-form {
+}
+.top-form {
+  display: flex;
+  justify-content: center;
+}
+.top-form input {
+  width: 100%;
+  margin: 7px;
+}
+.middle-form {
+  display: flex;
+  flex-direction: column;
+}
+.middle-form input,
+textarea {
+  margin: 7px;
+
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none; /*remove the resize handle on the bottom right*/
+}
+.bottom-form {
+  margin: 7px;
+}
+.contact-form input,
+textarea {
+  height: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.contact-form textarea {
+  height: 60px;
+}
+.contact-form button {
+  cursor: pointer;
+  width: 100%;
+  height: 30px;
+  background: var(--btn-addCart);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--almost-white);
 }

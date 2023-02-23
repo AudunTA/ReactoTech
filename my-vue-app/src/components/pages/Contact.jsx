@@ -28,18 +28,24 @@ function Contact() {
   return (
     <div className="wrapper-App">
       <div className="container-contact">
-        <form>
-          <input
-            placeholder="Your first name"
-            value={firstName}
-            onChange={onFirstNameChange}
-          ></input>
-          <input placeholder="Last name"></input>
-          <input placeholder="email"></input>
-          <textarea placeholder="whats the question?"></textarea>
-          <button type="submit" onClick={submitForm}>
-            Submit form
-          </button>
+        <form className="contact-form">
+          <div className="top-form">
+            <input
+              placeholder="Your first name"
+              value={firstName}
+              onChange={onFirstNameChange}
+            ></input>
+            <input placeholder="Last name"></input>
+          </div>
+          <div className="middle-form">
+            <input placeholder="email"></input>
+            <textarea placeholder="whats the question?"></textarea>
+          </div>
+          <div className="bottom-form">
+            <button type="submit" onClick={submitForm}>
+              Submit form
+            </button>
+          </div>
         </form>
       </div>
     </div>
