@@ -3,18 +3,17 @@ import "./Cart.css";
 import { Outlet, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import BackHome from "../backHome/BackHome";
 function Cart(props) {
   const products = props.cart;
   let totalprice = 0;
   return (
     <>
       <div className="wrapper-App">
+        <BackHome />
         <div className="container-cart">
           <div className="cart-container">
             <div className="cart-navigation">
-              <Link to="/">
-                <FontAwesomeIcon className="back-icon" icon={faAngleLeft} />
-              </Link>
               <h2 className="order-text">Order Summary</h2>
             </div>
 
@@ -31,8 +30,11 @@ function Cart(props) {
                     <img src={ele.imageUrl} className="cart-img"></img>
                   </div>
                   <div className="cart-short-description">
-                    <h2>{ele.title}</h2>
-                    <p>{ele.description}</p>
+                    <div className="cart-top-section">
+                      <h2>{ele.title}</h2>
+                      <p>{ele.description}</p>
+                    </div>
+
                     {ele.discountedPrice < ele.price ? (
                       <div className="price-displayed">
                         <p className="original-price">{ele.price}KR</p>{" "}
@@ -41,6 +43,13 @@ function Cart(props) {
                     ) : (
                       <p>{ele.price}KR</p>
                     )}
+                  </div>
+                  <div className="cart-right-section">
+                    <div className="amount-container">
+                      <button className="minus">-</button>
+                      <p>0</p>
+                      <button className="minus">+</button>
+                    </div>
                   </div>
                 </div>
               );

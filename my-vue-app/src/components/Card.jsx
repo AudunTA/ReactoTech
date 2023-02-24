@@ -34,8 +34,8 @@ function Card(props) {
       <div className="bottom-section">
         {props.fullitem.discountedPrice < props.fullitem.price ? (
           <div className="price-displayed">
-            <p className="original-price">{props.fullitem.price}KR</p>{" "}
-            <p className="new-price">{props.fullitem.discountedPrice}</p>
+            <p className="original-price">{props.fullitem.price}</p>{" "}
+            <p className="new-price">{props.fullitem.discountedPrice}KR</p>
           </div>
         ) : (
           <p>{props.fullitem.price}KR</p>

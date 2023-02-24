@@ -6,7 +6,7 @@ function Text(props) {
     <div className="text-container">
       <h2>Trending sales</h2>
       <p className="btn_SeeAll" onClick={setNumProps}>
-        See all
+        See more
       </p>
     </div>
   );

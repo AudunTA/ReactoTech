@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import BackHome from "../backHome/BackHome";
 function Contact() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -57,11 +58,9 @@ function Contact() {
 
   return (
     <div className="wrapper-App">
+      <BackHome />
       <div className="container-contact">
         <div className="contact-navigation">
-          <Link to="/">
-            <FontAwesomeIcon className="back-icon" icon={faAngleLeft} />
-          </Link>
           <h2 className="contact-text">Contact form</h2>
         </div>
 

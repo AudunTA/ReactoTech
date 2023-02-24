@@ -39,10 +39,10 @@ function Header(props) {
   const settingTheme = (theme) => {
     if (theme === "light") {
       document.documentElement.style.cssText =
-        "--main-color: #FFFFFF; --secondary-color: #F8FAFB; --btn-solid-color: #FFFFFF; --main-text-color: #272C45; --border-color: #E4E4E7; --btn-addCart: rgba(81, 69, 229, 0.9); --background-gradient-1:#f1f1f1; --background-gradient-2: #f1f1f1; --bacground-blur-color: #FFFFFF; --searchbar-color: #FFFFFF;   --cart-item-bg: #F1F1F1; --img-brightness: brightness(100%);";
+        "--main-color: #FFFFFF; --secondary-color: #FFFFFF; --btn-solid-color: #FFFFFF; --main-text-color: #272C45; --border-color: #E4E4E7; --btn-addCart: rgba(81, 69, 229, 0.9); --background-gradient-1:#f1f1f1; --background-gradient-2: #f1f1f1; --bacground-blur-color: #FFFFFF; --searchbar-color: #FFFFFF;   --cart-item-bg: #F1F1F1; --img-brightness: brightness(100%); --product-third-color: #f6f6f6";
     } else {
       document.documentElement.style.cssText =
-        "--main-color: rgba(255, 255, 255, 0.1); --secondary-color: rgba(18, 18, 18, 0.2); --btn-solid-color: #272727; --main-text-color: #f1f1f1; --border-color: #222222; --btn-addCart: rgba(81, 69, 229, 0.9); --background-gradient-1:#0f0f0f; --background-gradient-2: #272727; --bacground-blur-color: rgb(106, 188, 202); --searchbar-color: #272727;   --cart-item-bg: rgba(18, 18, 18, 0.2); --img-brightness: brightness(60%);";
+        "--main-color: rgba(255, 255, 255, 0.1); --secondary-color: rgba(18, 18, 18, 0.2); --btn-solid-color: #272727; --main-text-color: #f1f1f1; --border-color: #222222; --btn-addCart: rgba(81, 69, 229, 0.9); --background-gradient-1:#0f0f0f; --background-gradient-2: #272727; --bacground-blur-color: rgb(106, 188, 202); --searchbar-color: #272727;   --cart-item-bg: rgba(18, 18, 18, 0.2); --img-brightness: brightness(60%); --product-third-color: #304e53";
     }
   };
   const updateCartStatus = () => {
@@ -55,14 +55,6 @@ function Header(props) {
       <div className="header-container">
         <h1>Logo</h1>
         <div className="div-flex">
-          <Link to={"/contact"}>
-            <FontAwesomeIcon
-              className="header-icon"
-              icon={faEnvelope}
-              size={70}
-              onClick={updateCartStatus}
-            />
-          </Link>
           <div className="container-icon">
             <FontAwesomeIcon
               className="header-icon"
@@ -71,7 +63,14 @@ function Header(props) {
               size={70}
             />
           </div>
-
+          <Link to={"/contact"}>
+            <FontAwesomeIcon
+              className="header-icon"
+              icon={faEnvelope}
+              size={70}
+              onClick={updateCartStatus}
+            />
+          </Link>
           <div className="container-icon cart-header">
             <Link to={"/cart"} style={{ textDecoration: "none" }}>
               {" "}
@@ -85,12 +84,6 @@ function Header(props) {
             <div className="num-cart">
               <p>{numCart}</p>
             </div>
-          </div>
-          <div className="container-icon">
-            <img
-              className="header-profile-icon"
-              src="./src\images\avatar.png"
-            ></img>
           </div>
         </div>
       </div>
