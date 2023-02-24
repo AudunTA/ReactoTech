@@ -1,12 +1,21 @@
 .container-contact {
   border: 1px solid var(--btn-addCart);
   border-radius: 8px;
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
   background-color: var(--main-color);
 }
-
-.contact-form {
+.contact-navigation {
+  display: flex;
+}
+.back-icon {
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  background-color: var(--btn-addCart);
+  color: var(--almost-white);
+  border: 1px solid var(--border-color);
+  border-radius: 66.7%;
 }
 .top-form {
   display: flex;
@@ -16,6 +25,15 @@
   width: 100%;
   margin: 7px;
 }
+.error-firstname,
+.error-lastname,
+.error-bodytext,
+.error-email {
+  width: 100%;
+  margin: 0px 7px;
+  color: brown;
+}
+
 .middle-form {
   display: flex;
   flex-direction: column;

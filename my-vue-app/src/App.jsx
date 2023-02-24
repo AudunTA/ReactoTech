@@ -7,6 +7,8 @@ import { cartStatus } from "./components/header/Header";
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Contact from "./components/pages/Contact";
+import Specific from "./components/pages/Specific";
+import NotFound from "./components/pages/NotFound";
 const Cart = lazy(() => import("./components/cart/Cart"));
 const ProductPage = lazy(() => import("./components/pages/ProductPage"));
 const url = "https://api.noroff.dev/api/v1/online-shop";
@@ -37,6 +39,7 @@ function App() {
   const handleSeeAll = () => {
     setNumPosts(100);
   };
+
   return (
     <>
       <Header numCartItem={cartItems.length} />
@@ -48,7 +51,6 @@ function App() {
             element={
               <ProductPage
                 products={posts}
-                toCart={addToCart}
                 numPosts={numPosts}
                 setPosts={handleSeeAll}
                 loader={loader}
@@ -56,6 +58,11 @@ function App() {
             }
           />
           <Route path="/contact" element={<Contact />} />
+          <Route
+            path="/product/:id?"
+            element={<Specific products={posts} toCart={addToCart} />}
+          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
       <button onClick={() => console.log(cartItems.length)}>

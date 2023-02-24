@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import "./Card.css";
-
+import { Link } from "react-router-dom";
 function Card(props) {
-  const [clicked, setClicked] = useState(false);
-  const handleCartClick = () => {
-    props.toCart(props.fullitem);
-    setClicked(true);
-  };
   console.log(props.fullitem.price - props.fullitem.discountedPrice);
   return (
     <div className="card">
@@ -45,13 +40,9 @@ function Card(props) {
         ) : (
           <p>{props.fullitem.price}KR</p>
         )}
-        <button
-          onClick={handleCartClick}
-          disabled={clicked}
-          className="btn-addToCart"
-        >
-          {clicked ? "ADDED TO CART" : "ADD TO CART"}
-        </button>
+        <Link to={`/product/?id=${props.fullitem.id}`}>
+          <button className="btn-addToCart">VIEW ITEM</button>
+        </Link>
       </div>
     </div>
   );

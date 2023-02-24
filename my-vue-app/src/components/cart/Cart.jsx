@@ -10,12 +10,14 @@ function Cart(props) {
     <>
       <div className="wrapper-App">
         <div className="container-cart">
-          <Link to="/">
-            <FontAwesomeIcon className="back-icon" icon={faAngleLeft} />
-          </Link>
-
           <div className="cart-container">
-            <h2 className="order-text">Order Summary</h2>
+            <div className="cart-navigation">
+              <Link to="/">
+                <FontAwesomeIcon className="back-icon" icon={faAngleLeft} />
+              </Link>
+              <h2 className="order-text">Order Summary</h2>
+            </div>
+
             {products.map((ele) => {
               if (ele.discountedPrice < ele.price) {
                 totalprice = totalprice + ele.discountedPrice;

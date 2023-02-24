@@ -1,6 +1,10 @@
 import { React, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMoon,
+  faCartShopping,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { create } from "zustand";
@@ -51,7 +55,14 @@ function Header(props) {
       <div className="header-container">
         <h1>Logo</h1>
         <div className="div-flex">
-          <Link to={"/contact"}>Contact</Link>
+          <Link to={"/contact"}>
+            <FontAwesomeIcon
+              className="header-icon"
+              icon={faEnvelope}
+              size={70}
+              onClick={updateCartStatus}
+            />
+          </Link>
           <div className="container-icon">
             <FontAwesomeIcon
               className="header-icon"

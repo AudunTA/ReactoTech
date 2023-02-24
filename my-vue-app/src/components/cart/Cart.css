@@ -52,6 +52,9 @@ p {
   border: 1px solid var(--border-color);
   border-radius: 66.7%;
 }
+.cart-navigation {
+  display: flex;
+}
 @media screen and (max-width: 700px) {
   .order-text {
     font-size: 14px;
