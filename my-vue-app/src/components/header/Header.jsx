@@ -53,7 +53,7 @@ function Header(props) {
   return (
     <div className="header-wrapper">
       <div className="header-container">
-        <h1>Logo</h1>
+        <h2>ReactoTech</h2>
         <div className="div-flex">
           <div className="container-icon">
             <FontAwesomeIcon

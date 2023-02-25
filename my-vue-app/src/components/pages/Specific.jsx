@@ -15,6 +15,7 @@ function Specific(props) {
   const [specific, setSpesific] = useState([]);
   const [stars, setStars] = useState(0);
   const [numReviews, setNumReviews] = useState(0);
+  const [showReivews, setShowReviews] = useState(false);
   const [reviews, setReviews] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const productid = searchParams.get("id");
@@ -32,6 +33,9 @@ function Specific(props) {
   const handleCartClick = () => {
     props.toCart(specific);
   };
+  const handleReviewClick = () => {
+    setShowReviews(!showReivews);
+  };
   return (
     <div className="wrapper-App">
       <BackHome />
@@ -44,7 +48,7 @@ function Specific(props) {
             <h2>{specific.title}</h2>
             <p>{specific.description}</p>
             <hr className="information-divider"></hr>
-            <div className="container-stars">
+            <div className="container-stars" onClick={handleReviewClick}>
               <p>{stars}</p>
               <FontAwesomeIcon className="star-icon" icon={faStar} size={70} />
               <p>({reviews.length})</p>
@@ -87,7 +91,11 @@ function Specific(props) {
           </div>
         </div>
       </div>
-      {reviews ? <Reviews reviews={reviews} /> : ""}
+      {reviews && showReivews ? (
+        <Reviews reviews={reviews} show={showReivews} />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

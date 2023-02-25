@@ -25,19 +25,6 @@ function ProductPage(props) {
     };
   }, [props.loader]);
 
-  // posts.map((ele) => {
-  //   console.log(ele.reviews.length, "YOOOOOOO");
-  //   console.log(ele.reviews);
-  //   if (ele.reviews) {
-  //     for (let i = 0; ele.reviews.length; i++) {
-  //       console.log("NYYYYYYYYYYYYYYYYYYYYYYYYYYY ", i);
-  //       console.log(ele.reviews[i].length);
-  //       console.log(ele.reviews[i]);
-  //       setReviews([...reviews, ele.reviews[i]]);
-  //     }
-  //   }
-  // });
-
   return (
     <div className="wrapper-App">
       <div className="App">
