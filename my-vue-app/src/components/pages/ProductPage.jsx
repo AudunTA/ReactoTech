@@ -61,7 +61,6 @@ function ProductPage(props) {
           )}
         </div>
       </div>
-      <button onClick={() => console.log(reviews)}>CLICK REVIEWS</button>
     </div>
   );
 }

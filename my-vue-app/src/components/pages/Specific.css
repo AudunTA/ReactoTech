@@ -33,6 +33,7 @@
   border: 1px solid var(--border-color);
   border-radius: 8px;
   color: var(--almost-white);
+  cursor: pointer;
 }
 .original-price {
   text-decoration: line-through;

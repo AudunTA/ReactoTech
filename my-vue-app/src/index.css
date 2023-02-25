@@ -4,7 +4,7 @@ body {
     var(--background-gradient-1) 100%,
     var(--background-gradient-2) 98.16%
   );
-  height: 3000px;
+
   padding: 0;
   margin: 0;
 }

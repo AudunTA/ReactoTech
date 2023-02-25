@@ -37,7 +37,12 @@ function App() {
     setCartItems([...cartItems, ele]);
   };
   const handleSeeAll = () => {
-    setNumPosts(100);
+    console.log(numPosts);
+    if (numPosts < 10) {
+      setNumPosts(100);
+    } else {
+      setNumPosts(4);
+    }
   };
 
   return (
@@ -65,9 +70,6 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-      <button onClick={() => console.log(cartItems.length)}>
-        log cartitems
-      </button>
     </>
   );
 }
