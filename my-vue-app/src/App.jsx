@@ -17,7 +17,7 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [loader, setLoader] = useState(true);
   const [cartItems, setCartItems] = useState([]);
-  const [showCart, setShowCart] = useState(cartStatus.getState().open);
+
   const [numPosts, setNumPosts] = useState(4);
   useEffect(() => {
     // Function that gets our posts
@@ -70,6 +70,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
+      <button onClick={() => console.log("test")}>TEst</button>
     </>
   );
 }

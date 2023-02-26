@@ -19,9 +19,16 @@ p {
 }
 .card h2 {
   font-size: 1em;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 .card p {
   font-size: 0.7em;
+}
+.description-text {
+  color: var(--text-description);
+  display: block;
+  margin-block-start: 0em;
 }
 .card button {
   font-size: 12px;

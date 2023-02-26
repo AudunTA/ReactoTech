@@ -11,7 +11,7 @@
   margin: auto;
 }
 .cart-item {
-  background-color: var(--secondary-color);
+  background-color: var(--background-gradient-2);
   border-radius: 8px;
   display: flex;
   margin: 10px 0px;

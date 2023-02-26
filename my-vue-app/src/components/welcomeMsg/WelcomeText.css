@@ -4,3 +4,19 @@
 .welcome-container h1 {
   color: var(--main-text-color);
 }
+.welcome-container p {
+  font-size: 1em;
+}
+.welcome-container h1 {
+  margin: 0px;
+  font-size: 3em;
+}
+.welcome-container p {
+  margin-bottom: 14px;
+}
+
+@media screen and (min-width: 700px) {
+  .welcome-container h1,
+  p {
+  }
+}

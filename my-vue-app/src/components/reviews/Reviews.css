@@ -2,7 +2,7 @@
   max-width: 800px;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  background-color: var(--btn-solid-color);
+  background-color: var(--main-color);
   display: flex;
   margin: 7px auto;
 }

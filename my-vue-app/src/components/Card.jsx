@@ -29,7 +29,7 @@ function Card(props) {
           }}
         ></div>
         <h2>{props.fullitem.title}</h2>
-        <p>{props.fullitem.description}</p>
+        <p className="description-text">{props.fullitem.description}</p>
       </div>
       <div className="bottom-section">
         {props.fullitem.discountedPrice < props.fullitem.price ? (

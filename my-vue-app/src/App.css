@@ -13,6 +13,7 @@
   --bacground-blur-color: rgb(106, 188, 202);
   --img-brightness: brightness(60%);
   --product-third-color: #304e53;
+  --text-description: #7a7e83;
 }
 
 @font-face {
@@ -40,9 +41,7 @@ button {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 9px;
 }
-.marin-top {
-  margin-top: 100px;
-}
+
 @media screen and (min-width: 1000px) {
   .flex-div {
     grid-template-columns: repeat(3, 1fr);

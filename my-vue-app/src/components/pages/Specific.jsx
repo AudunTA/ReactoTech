@@ -46,7 +46,7 @@ function Specific(props) {
         <div className="specific-information">
           <div className="top-section">
             <h2>{specific.title}</h2>
-            <p>{specific.description}</p>
+            <p className="text-description">{specific.description}</p>
             <hr className="information-divider"></hr>
             <div className="container-stars" onClick={handleReviewClick}>
               <p>{stars}</p>

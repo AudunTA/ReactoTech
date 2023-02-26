@@ -44,13 +44,6 @@ function Cart(props) {
                       <p>{ele.price}KR</p>
                     )}
                   </div>
-                  <div className="cart-right-section">
-                    <div className="amount-container">
-                      <button className="minus">-</button>
-                      <p>0</p>
-                      <button className="minus">+</button>
-                    </div>
-                  </div>
                 </div>
               );
             })}

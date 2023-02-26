@@ -4,7 +4,7 @@ function WelcomeText() {
   return (
     <div className="welcome-container">
       <h1>Hello</h1>
-      <p>Don't miss out - Sign Up</p>
+      <p>Welcome To ReactoTech</p>
     </div>
   );
 }
