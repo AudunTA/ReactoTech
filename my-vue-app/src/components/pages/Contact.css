@@ -5,9 +5,28 @@
 .container-contact {
   border: 1px solid var(--border-color);
   border-radius: 8px;
-
+  height: 400px;
   margin: 7px;
-  background-color: var(--main-color);
+  background-color: var(--almost-white);
+  display: flex;
+}
+.container-left-contact {
+  background-color: var(--btn-addCart);
+  margin: 7px;
+  border-radius: 8px;
+}
+.container-left-contact p {
+  max-width: 350px;
+}
+.container-right-contact {
+  flex: 1;
+}
+.contact-form-icon {
+  color: var(--main-text-color);
+}
+.wrapper-contact-icon {
+  display: flex;
+  align-items: center;
 }
 .contact-navigation {
   display: flex;
@@ -28,6 +47,10 @@
 .top-form input {
   width: 100%;
   margin: 7px;
+}
+.top-form input:focus {
+  border-color: green;
+  outline: 1px dotted #000;
 }
 .error-firstname,
 .error-lastname,
@@ -56,17 +79,29 @@ textarea {
 
   resize: none; /*remove the resize handle on the bottom right*/
 }
+.contact-form input {
+  outline: 0;
+  border-width: 0 0 2px;
+}
 .bottom-form {
   margin: 7px;
 }
 .contact-form input,
 textarea {
-  height: 30px;
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border: none;
+  border-bottom: 3px solid var(--border-color);
+  padding: 5px 10px;
+  outline: none;
+  background-color: var(--almost-white);
 }
 .contact-form textarea {
-  height: 60px;
+  border: none;
+  border-bottom: 3px solid var(--border-color);
+  padding: 5px 10px;
+  outline: none;
+}
+.contact-form input:focus {
+  border-bottom: 3px solid var(--border-color);
 }
 .contact-form button {
   cursor: pointer;

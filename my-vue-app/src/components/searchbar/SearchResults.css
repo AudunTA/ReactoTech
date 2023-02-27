@@ -14,8 +14,17 @@
   background-color: var(--search-hover);
   cursor: pointer;
 }
+.search-item p {
+  font-size: 0.7em;
+}
 .search-result-icon {
   margin-left: 7px;
   margin-right: 7px;
   color: var(--main-text-color);
+}
+
+@media screen and (min-width: 700px) {
+  .search-item p {
+    font-size: 1em;
+  }
 }

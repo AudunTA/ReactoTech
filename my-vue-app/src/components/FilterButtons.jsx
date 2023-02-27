@@ -19,7 +19,7 @@ function FilterButtons(props) {
       id: 0,
       iconsrc: <FontAwesomeIcon className="filter-icon" icon={faList} />,
       text: "All",
-      active: false,
+      active: true,
       removefilter: true,
     },
     {

@@ -2,7 +2,11 @@ import React from "react";
 import "./Contact.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPhone,
+  faEnvelope,
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import BackHome from "../backHome/BackHome";
 function Contact() {
@@ -61,56 +65,74 @@ function Contact() {
       <BackHome />
       <div className="wrapper-contact">
         <div className="container-contact">
-          <div className="contact-navigation">
-            <h2 className="contact-text">Contact form</h2>
-          </div>
+          <div className="container-left-contact">
+            <h2>Contact Information</h2>
+            <p>Fill in the form and we will get back to you within 24 hours.</p>
 
-          <form className="contact-form">
-            <div className="top-form">
-              <input
-                placeholder="Your first name"
-                value={firstName}
-                onChange={onFirstNameChange}
-              ></input>
-              <input
-                placeholder="Last name"
-                value={lastName}
-                onChange={onLastNameChange}
-              ></input>
+            <div className="wrapper-contact-icon">
+              <FontAwesomeIcon className="contact-form-icon" icon={faPhone} />
+              <p> +47 40938183</p>
             </div>
-            <div className="top-form">
-              <div className="error-firstname">
-                {errorFirstName ? "minimum 3 characters" : ""}
-              </div>
-              <div className="error-lastname">
-                {errorLastName ? "minimum 3 characters" : ""}
-              </div>
+            <div className="wrapper-contact-icon">
+              <FontAwesomeIcon
+                className="contact-form-icon"
+                icon={faEnvelope}
+              />
+              <p> contact@reactotech.com</p>
             </div>
-            <div className="middle-form">
-              <input
-                type={email}
-                placeholder="email"
-                value={email}
-                onChange={onEmailChange}
-              ></input>
-              <div className="error-email">
-                {errorEmail ? "not a valid email" : ""}
+          </div>
+          <div className="container-right-contact">
+            <form className="contact-form">
+              <div className="top-form">
+                <label for="first_name">First Name</label>
+                <input
+                  placeholder="Ola"
+                  value={firstName}
+                  onChange={onFirstNameChange}
+                  name="first_name"
+                ></input>
+                <label for="last_name">Last Name</label>
+                <input
+                  placeholder="Last name"
+                  value={lastName}
+                  onChange={onLastNameChange}
+                  name="last_name"
+                ></input>
               </div>
-              <textarea
-                placeholder="whats the question?"
-                value={bodyText}
-                onChange={onBodyChange}
-              ></textarea>
-              <div className="error-bodytext">
-                {errorBodyText ? "minumum 3 characters" : ""}
+              <div className="top-form">
+                <div className="error-firstname">
+                  {errorFirstName ? "minimum 3 characters" : ""}
+                </div>
+                <div className="error-lastname">
+                  {errorLastName ? "minimum 3 characters" : ""}
+                </div>
               </div>
-            </div>
-            <div className="bottom-form">
-              <button type="submit" onClick={submitForm}>
-                Submit form
-              </button>
-            </div>
-          </form>
+              <div className="middle-form">
+                <input
+                  type={email}
+                  placeholder="email"
+                  value={email}
+                  onChange={onEmailChange}
+                ></input>
+                <div className="error-email">
+                  {errorEmail ? "not a valid email" : ""}
+                </div>
+                <textarea
+                  placeholder="whats the question?"
+                  value={bodyText}
+                  onChange={onBodyChange}
+                ></textarea>
+                <div className="error-bodytext">
+                  {errorBodyText ? "minumum 3 characters" : ""}
+                </div>
+              </div>
+              <div className="bottom-form">
+                <button type="submit" onClick={submitForm}>
+                  Submit form
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import {
   faMoon,
   faCartShopping,
   faEnvelope,
+  faBoxesPacking,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Header.css";
 import { Link } from "react-router-dom";
@@ -53,7 +54,16 @@ function Header(props) {
   return (
     <div className="header-wrapper">
       <div className="header-container">
-        <h2>ReactoTech</h2>
+        <Link to={`/`}>
+          <div className="logo-section">
+            <FontAwesomeIcon
+              className="logo-icon"
+              icon={faBoxesPacking}
+              size={100}
+            />
+            <h2>ReactoTech</h2>
+          </div>
+        </Link>
         <div className="div-flex">
           <div className="container-icon">
             <FontAwesomeIcon

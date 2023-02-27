@@ -78,7 +78,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-      <button onClick={() => console.log(filter)}>TEst</button>
+      <button onClick={() => console.log(filter.length > 1)}>TEst</button>
     </>
   );
 }
