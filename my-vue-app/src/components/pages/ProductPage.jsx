@@ -9,8 +9,11 @@ import { useState, useEffect } from "react";
 function ProductPage(props) {
   let posts = props.products;
   let toCart = props.toCart;
+  let setNumPosts = props.setNumPosts;
   let numberPosts = props.numPosts;
   let setPosts = props.setPosts;
+  let filter = props.filter;
+  let setFilter = props.setFilter;
   const [shouldRender, setShouldRender] = useState(true);
   const [reviews, setReviews] = useState([]);
 
@@ -30,8 +33,8 @@ function ProductPage(props) {
       <div className="App">
         <WelcomeText />
         <Searchbar prodcuts={posts} />
-        <FilterButtons />
-        <Text setNumPosts={setPosts} />
+        <FilterButtons setFilter={setFilter} setNumPosts={setNumPosts} />
+        <Text setNumPosts={setPosts} filter={filter} />
 
         <div className="flex-div">
           {shouldRender ? (
@@ -43,10 +46,15 @@ function ProductPage(props) {
             </>
           ) : (
             posts.slice(0, numberPosts).map((ele) => {
-              return <Card key={ele.id} fullitem={ele} toCart={toCart} />;
+              for (let i = 0; i < ele.tags.length; i++) {
+                if (ele.tags[i].includes(filter)) {
+                  return <Card key={ele.id} fullitem={ele} toCart={toCart} />;
+                }
+              }
             })
           )}
         </div>
+        <button onClick={() => console.log(filter)}>click</button>
       </div>
     </div>
   );

@@ -59,57 +59,59 @@ function Contact() {
   return (
     <div className="wrapper-App">
       <BackHome />
-      <div className="container-contact">
-        <div className="contact-navigation">
-          <h2 className="contact-text">Contact form</h2>
-        </div>
+      <div className="wrapper-contact">
+        <div className="container-contact">
+          <div className="contact-navigation">
+            <h2 className="contact-text">Contact form</h2>
+          </div>
 
-        <form className="contact-form">
-          <div className="top-form">
-            <input
-              placeholder="Your first name"
-              value={firstName}
-              onChange={onFirstNameChange}
-            ></input>
-            <input
-              placeholder="Last name"
-              value={lastName}
-              onChange={onLastNameChange}
-            ></input>
-          </div>
-          <div className="top-form">
-            <div className="error-firstname">
-              {errorFirstName ? "minimum 3 characters" : ""}
+          <form className="contact-form">
+            <div className="top-form">
+              <input
+                placeholder="Your first name"
+                value={firstName}
+                onChange={onFirstNameChange}
+              ></input>
+              <input
+                placeholder="Last name"
+                value={lastName}
+                onChange={onLastNameChange}
+              ></input>
             </div>
-            <div className="error-lastname">
-              {errorLastName ? "minimum 3 characters" : ""}
+            <div className="top-form">
+              <div className="error-firstname">
+                {errorFirstName ? "minimum 3 characters" : ""}
+              </div>
+              <div className="error-lastname">
+                {errorLastName ? "minimum 3 characters" : ""}
+              </div>
             </div>
-          </div>
-          <div className="middle-form">
-            <input
-              type={email}
-              placeholder="email"
-              value={email}
-              onChange={onEmailChange}
-            ></input>
-            <div className="error-email">
-              {errorEmail ? "not a valid email" : ""}
+            <div className="middle-form">
+              <input
+                type={email}
+                placeholder="email"
+                value={email}
+                onChange={onEmailChange}
+              ></input>
+              <div className="error-email">
+                {errorEmail ? "not a valid email" : ""}
+              </div>
+              <textarea
+                placeholder="whats the question?"
+                value={bodyText}
+                onChange={onBodyChange}
+              ></textarea>
+              <div className="error-bodytext">
+                {errorBodyText ? "minumum 3 characters" : ""}
+              </div>
             </div>
-            <textarea
-              placeholder="whats the question?"
-              value={bodyText}
-              onChange={onBodyChange}
-            ></textarea>
-            <div className="error-bodytext">
-              {errorBodyText ? "minumum 3 characters" : ""}
+            <div className="bottom-form">
+              <button type="submit" onClick={submitForm}>
+                Submit form
+              </button>
             </div>
-          </div>
-          <div className="bottom-form">
-            <button type="submit" onClick={submitForm}>
-              Submit form
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   );

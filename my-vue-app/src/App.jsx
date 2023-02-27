@@ -17,20 +17,25 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [loader, setLoader] = useState(true);
   const [cartItems, setCartItems] = useState([]);
-
+  const [filter, setFilter] = useState([]);
   const [numPosts, setNumPosts] = useState(4);
   useEffect(() => {
     // Function that gets our posts
     async function getData() {
-      const response = await fetch(url);
-      const json = await response.json();
-      if (json.statusCode !== 404) {
-        setLoader(false);
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        if (json.statusCode !== 404) {
+          setLoader(false);
+        }
+        // Setting our `posts` state to the API data we received
+        console.log(json);
+        setPosts(json);
+      } catch (e) {
+        console.log(e);
       }
-      // Setting our `posts` state to the API data we received
-      console.log(json);
-      setPosts(json);
     }
+
     getData();
   }, []);
   const addToCart = (ele) => {
@@ -56,9 +61,12 @@ function App() {
             element={
               <ProductPage
                 products={posts}
+                setNumPosts={setNumPosts}
                 numPosts={numPosts}
                 setPosts={handleSeeAll}
                 loader={loader}
+                filter={filter}
+                setFilter={setFilter}
               />
             }
           />
@@ -70,7 +78,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-      <button onClick={() => console.log("test")}>TEst</button>
+      <button onClick={() => console.log(filter)}>TEst</button>
     </>
   );
 }

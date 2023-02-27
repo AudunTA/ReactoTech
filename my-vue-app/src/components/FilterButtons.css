@@ -8,7 +8,9 @@
   margin-right: 5px;
   cursor: pointer;
 }
-
+.active-icon {
+  border: 1px solid var(--btn-addCart);
+}
 .filter-container {
   margin: 15px auto;
   text-align: center;

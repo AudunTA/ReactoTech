@@ -1,8 +1,12 @@
-.container-contact {
-  border: 1px solid var(--btn-addCart);
-  border-radius: 8px;
+.wrapper-contact {
   max-width: 800px;
-  margin: 7px auto;
+  margin: auto;
+}
+.container-contact {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+
+  margin: 7px;
   background-color: var(--main-color);
 }
 .contact-navigation {

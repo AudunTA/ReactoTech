@@ -7,10 +7,11 @@
 .search-item {
   display: flex;
   align-items: center;
+  border-radius: 8px;
   margin: 7px;
 }
 .search-item:hover {
-  background-color: var(--btn-addCart);
+  background-color: var(--search-hover);
   cursor: pointer;
 }
 .search-result-icon {

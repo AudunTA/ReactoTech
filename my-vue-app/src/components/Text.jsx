@@ -9,13 +9,14 @@ import { useState } from "react";
 function Text(props) {
   const [clicked, setClicked] = useState(false);
   let setNumProps = props.setNumPosts;
+  let filter = props.filter;
   const handleClick = () => {
     setNumProps();
     setClicked(!clicked);
   };
   return (
     <div className="text-container">
-      <h2>Trending sales</h2>
+      {filter ? <h2>results for: {filter}</h2> : <h2>Trending sales</h2>}
       {clicked ? (
         <button className="btn_expand-products" onClick={handleClick}>
           show less
