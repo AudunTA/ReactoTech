@@ -15,11 +15,13 @@
   --product-third-color: #304e53;
   --text-description: #7a7e83;
   --search-hover: rgba(255, 255, 255, 0.1);
+  --full-white: #ffffff;
+  --border-gray: #e4e4e7;
 }
 
 @font-face {
   font-family: SFpro;
-  src: url(./assets/fonts/SFPRODISPLAYBOLD.OTF);
+  src: url(./assets/fonts/SFPRODISPLAYREGULAR.OTF);
 }
 .wrapper-App {
   margin: 100px 15px;

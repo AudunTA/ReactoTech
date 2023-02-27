@@ -25,16 +25,19 @@
   background-color: var(--secondary-color);
   margin: 7px;
   border-radius: 8px;
-  max-width: 100px;
+  height: 95%;
+  max-width: 110px;
 
   object-fit: cover;
 
   object-fit: cover;
 }
-.cart-container h2,
-p {
-  font-size: 10px;
-  color: var(--main-text-color);
+.cart-container h2 {
+  font-size: 1.3em;
+  font-weight: 400;
+}
+.cart-container p {
+  font-size: 1em;
 }
 
 .btn-cart {
@@ -79,5 +82,11 @@ p {
 @media screen and (max-width: 700px) {
   .order-text {
     font-size: 14px;
+  }
+  .cart-container h2 {
+    font-size: 1em;
+  }
+  .cart-container p {
+    font-size: 0.7em;
   }
 }

@@ -1,3 +1,7 @@
+@font-face {
+  font-family: SFpro;
+  src: url(./assets/fonts/SFPRODISPLAYBOLD.OTF);
+}
 .wrapper-contact {
   max-width: 800px;
   margin: auto;
@@ -7,8 +11,13 @@
   border-radius: 8px;
   height: 400px;
   margin: 7px;
-  background-color: var(--almost-white);
+  background-color: var(--full-white);
   display: flex;
+}
+.flex-div-contact {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .container-left-contact {
   background-color: var(--btn-addCart);
@@ -20,6 +29,12 @@
 }
 .container-right-contact {
   flex: 1;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 .contact-form-icon {
   color: var(--main-text-color);
@@ -41,17 +56,15 @@
   border-radius: 66.7%;
 }
 .top-form {
+  margin-top: 7px;
   display: flex;
   justify-content: center;
 }
 .top-form input {
-  width: 100%;
+  flex: 1;
   margin: 7px;
 }
-.top-form input:focus {
-  border-color: green;
-  outline: 1px dotted #000;
-}
+
 .error-firstname,
 .error-lastname,
 .error-bodytext,
@@ -68,7 +81,6 @@
 .middle-form input,
 textarea {
   margin: 7px;
-
   border: none;
   overflow: auto;
   outline: none;
@@ -83,25 +95,35 @@ textarea {
   outline: 0;
   border-width: 0 0 2px;
 }
+.contact-form label {
+  font-family: SFpro;
+  padding: 7px;
+  font-size: 10px;
+  font-weight: bold;
+}
 .bottom-form {
   margin: 7px;
 }
 .contact-form input,
 textarea {
+  font-family: SFpro;
   border: none;
-  border-bottom: 3px solid var(--border-color);
-  padding: 5px 10px;
+  border-bottom: 1px solid var(--border-gray);
   outline: none;
-  background-color: var(--almost-white);
+  background-color: var(--full-white);
 }
 .contact-form textarea {
   border: none;
-  border-bottom: 3px solid var(--border-color);
-  padding: 5px 10px;
+  border-bottom: 1px solid var(--border-gray);
+
   outline: none;
 }
-.contact-form input:focus {
-  border-bottom: 3px solid var(--border-color);
+input:focus {
+  outline: none;
+}
+.contact-form input:focus,
+textarea:focus {
+  border-bottom: 2px solid var(--btn-addCart);
 }
 .contact-form button {
   cursor: pointer;

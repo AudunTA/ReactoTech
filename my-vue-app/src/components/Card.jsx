@@ -41,7 +41,7 @@ function Card(props) {
           <p>{props.fullitem.price}KR</p>
         )}
         <Link to={`/product/?id=${props.fullitem.id}`}>
-          <button className="btn-addToCart">VIEW ITEM</button>
+          <button className="btn-addToCart">View Item</button>
         </Link>
       </div>
     </div>

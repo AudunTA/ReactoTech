@@ -83,47 +83,60 @@ function Contact() {
           </div>
           <div className="container-right-contact">
             <form className="contact-form">
-              <div className="top-form">
-                <label for="first_name">First Name</label>
-                <input
-                  placeholder="Ola"
-                  value={firstName}
-                  onChange={onFirstNameChange}
-                  name="first_name"
-                ></input>
-                <label for="last_name">Last Name</label>
-                <input
-                  placeholder="Last name"
-                  value={lastName}
-                  onChange={onLastNameChange}
-                  name="last_name"
-                ></input>
-              </div>
-              <div className="top-form">
-                <div className="error-firstname">
-                  {errorFirstName ? "minimum 3 characters" : ""}
+              <div className="wrapper-top-form">
+                <div className="top-form">
+                  <div className="flex-div-contact">
+                    <label for="first_name">First Name</label>
+                    <input
+                      placeholder="Ola"
+                      value={firstName}
+                      onChange={onFirstNameChange}
+                      name="first_name"
+                    ></input>
+                  </div>
+                  <div className="flex-div-contact">
+                    <label for="last_name">Last Name</label>
+                    <input
+                      type="text"
+                      placeholder="Nordmann"
+                      value={lastName}
+                      onChange={onLastNameChange}
+                      name="last_name"
+                    ></input>
+                  </div>
                 </div>
-                <div className="error-lastname">
-                  {errorLastName ? "minimum 3 characters" : ""}
+                <div className="top-form">
+                  <div className="error-firstname">
+                    {errorFirstName ? "minimum 3 characters" : ""}
+                  </div>
+                  <div className="error-lastname">
+                    {errorLastName ? "minimum 3 characters" : ""}
+                  </div>
                 </div>
-              </div>
-              <div className="middle-form">
-                <input
-                  type={email}
-                  placeholder="email"
-                  value={email}
-                  onChange={onEmailChange}
-                ></input>
-                <div className="error-email">
-                  {errorEmail ? "not a valid email" : ""}
-                </div>
-                <textarea
-                  placeholder="whats the question?"
-                  value={bodyText}
-                  onChange={onBodyChange}
-                ></textarea>
-                <div className="error-bodytext">
-                  {errorBodyText ? "minumum 3 characters" : ""}
+                <div className="middle-form">
+                  <div className="flex-div-contact">
+                    <label for="email">Email</label>
+                    <input
+                      type={email}
+                      placeholder="email@example.com"
+                      value={email}
+                      name="email"
+                      onChange={onEmailChange}
+                    ></input>
+                  </div>
+
+                  <div className="error-email">
+                    {errorEmail ? "not a valid email" : ""}
+                  </div>
+                  <label for="email">Message</label>
+                  <textarea
+                    placeholder="whats the question?"
+                    value={bodyText}
+                    onChange={onBodyChange}
+                  ></textarea>
+                  <div className="error-bodytext">
+                    {errorBodyText ? "minumum 3 characters" : ""}
+                  </div>
                 </div>
               </div>
               <div className="bottom-form">
