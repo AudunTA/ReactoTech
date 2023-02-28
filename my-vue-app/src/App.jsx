@@ -31,6 +31,7 @@ function App() {
         // Setting our `posts` state to the API data we received
         console.log(json);
         setPosts(json);
+        console.log("REEEEEEEEEEEEEEEEEEEEEEE");
       } catch (e) {
         console.log(e);
       }

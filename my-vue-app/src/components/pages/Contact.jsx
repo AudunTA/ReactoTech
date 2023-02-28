@@ -66,19 +66,23 @@ function Contact() {
       <div className="wrapper-contact">
         <div className="container-contact">
           <div className="container-left-contact">
-            <h2>Contact Information</h2>
-            <p>Fill in the form and we will get back to you within 24 hours.</p>
+            <div className="margin-left">
+              <h2>Contact Information</h2>
+              <p>
+                Fill in the form and we will get back to you within 24 hours.
+              </p>
 
-            <div className="wrapper-contact-icon">
-              <FontAwesomeIcon className="contact-form-icon" icon={faPhone} />
-              <p> +47 40938183</p>
-            </div>
-            <div className="wrapper-contact-icon">
-              <FontAwesomeIcon
-                className="contact-form-icon"
-                icon={faEnvelope}
-              />
-              <p> contact@reactotech.com</p>
+              <div className="wrapper-contact-icon">
+                <FontAwesomeIcon className="contact-form-icon" icon={faPhone} />
+                <p> +47 40938183</p>
+              </div>
+              <div className="wrapper-contact-icon">
+                <FontAwesomeIcon
+                  className="contact-form-icon"
+                  icon={faEnvelope}
+                />
+                <p> contact@reactotech.com</p>
+              </div>
             </div>
           </div>
           <div className="container-right-contact">

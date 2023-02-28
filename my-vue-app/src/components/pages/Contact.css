@@ -9,10 +9,11 @@
 .container-contact {
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  height: 400px;
+
   margin: 7px;
   background-color: var(--full-white);
   display: flex;
+  flex-direction: column;
 }
 .flex-div-contact {
   display: flex;
@@ -26,6 +27,9 @@
 }
 .container-left-contact p {
   max-width: 350px;
+}
+.margin-left {
+  margin: 7px;
 }
 .container-right-contact {
   flex: 1;
@@ -57,7 +61,7 @@
 }
 .top-form {
   margin-top: 7px;
-  display: flex;
+
   justify-content: center;
 }
 .top-form input {
@@ -133,4 +137,16 @@ textarea:focus {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   color: var(--almost-white);
+}
+
+@media screen and (min-width: 700px) {
+  .container-contact {
+    flex-direction: row;
+  }
+  .top-form {
+    display: flex;
+  }
+  .container-contact {
+    height: 400px;
+  }
 }
