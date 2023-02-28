@@ -1,3 +1,8 @@
+@font-face {
+  font-family: SFpro;
+  src: url(./assets/fonts/SFPRODISPLAYREGULAR.OTF);
+}
+
 .container-specific {
   max-width: 800px;
   border-radius: 8px;
@@ -6,9 +11,9 @@
   display: flex;
   margin: 7px auto;
 }
-.container-specific h2,
-p {
+.container-specific h2 {
   color: var(--main-text-color);
+  font-weight: 400;
 }
 
 .img-container {
@@ -101,6 +106,7 @@ p {
 }
 .text-description {
   color: var(--text-description);
+  font-weight: 400;
 }
 @media screen and (max-width: 700px) {
   .container-specific {

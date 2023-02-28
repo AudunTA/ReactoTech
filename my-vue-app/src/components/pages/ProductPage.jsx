@@ -54,7 +54,6 @@ function ProductPage(props) {
             })
           )}
         </div>
-        <button onClick={() => console.log(filter)}>click</button>
       </div>
     </div>
   );

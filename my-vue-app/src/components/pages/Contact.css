@@ -26,7 +26,13 @@
   border-radius: 8px;
 }
 .container-left-contact p {
+  color: var(--main-text-color);
+  font-size: 0.7em;
   max-width: 350px;
+}
+.container-left-contact h2 {
+  font-size: 1.2em;
+  color: var(--main-text-color);
 }
 .margin-left {
   margin: 7px;
@@ -41,6 +47,7 @@
   height: 100%;
 }
 .contact-form-icon {
+  margin-right: 7px;
   color: var(--main-text-color);
 }
 .wrapper-contact-icon {
@@ -148,5 +155,11 @@ textarea:focus {
   }
   .container-contact {
     height: 400px;
+  }
+  .container-left-contact p {
+    font-size: 1em;
+  }
+  .container-left-contact h2 {
+    font-size: 1.5em;
   }
 }

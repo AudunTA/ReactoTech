@@ -23,7 +23,7 @@ function Reviews(props) {
                   {ele.rating}
                 </div>
                 <div className="review-descrption">
-                  <p>{ele.description}</p>
+                  <p>"{ele.description}"</p>
                 </div>
                 <div className="reviewed-by">
                   <div className="top-section-reviewed-by">

@@ -37,12 +37,20 @@
 }
 .num-cart {
   position: absolute;
-  top: -20px;
-  margin-left: 20px;
+  top: -18px;
+  margin-left: 18px;
 }
 .num-cart p {
-  font-size: 15px;
-  color: red;
+  width: 10px;
+  height: 10px;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--almost-white);
+  background-color: #b24e46;
+  padding: 3px;
+  border-radius: 50%;
 }
 .header-profile-icon {
   width: 30px;
@@ -50,7 +58,7 @@
   border-radius: 66.7%;
 }
 .logo-icon {
-  font-size: 20px;
+  font-size: 15px;
   color: var(--main-text-color);
 }
 .logo-section {
@@ -60,6 +68,7 @@
 .logo-section h2 {
   margin-left: 7px;
   color: var(--main-text-color);
+  font-weight: 400;
   font-size: 20px;
 }
 @media screen and (max-width: 1400px) {
