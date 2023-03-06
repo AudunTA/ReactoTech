@@ -1,5 +1,5 @@
 {
-  "name": "my-vue-app",
+  "name": "reactotech",
   "private": true,
   "version": "0.0.0",
   "homepage": "https://AudunTA.github.io/ReactoTech",
@@ -31,5 +31,17 @@
     "@vitejs/plugin-react": "^3.1.0",
     "gh-pages": "^5.0.0",
     "vite": "^4.1.0"
-  }
+  },
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AudunTA/ReactoTech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AudunTA/ReactoTech/issues"
+  },
+  "description": ""
 }
