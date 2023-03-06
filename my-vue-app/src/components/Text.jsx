@@ -15,7 +15,7 @@ function Text(props) {
     setNumProps();
     setClicked(!clicked);
   };
-  console.log("filter length ", filter.length);
+
   return (
     <div className="text-container">
       {filter.length > 0 ? (

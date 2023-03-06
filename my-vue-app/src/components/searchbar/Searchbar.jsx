@@ -6,7 +6,7 @@ import SearchResults from "./SearchResults";
 import { useState } from "react";
 function Searchbar(props) {
   let products = props.prodcuts;
-  console.log(products);
+
   const [results, setResults] = useState([]);
   const search = (event) => {
     let matchingProducts = products.filter((product) =>

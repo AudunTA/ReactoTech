@@ -50,7 +50,6 @@ function FilterButtons(props) {
     },
   ]);
   const handleFilterClick = (e) => {
-    console.log(e.target.value.toLowerCase());
     setNumPosts(100);
     setFilter(e.target.value.toLowerCase());
 
@@ -74,7 +73,7 @@ function FilterButtons(props) {
         active: false,
       };
     });
-    console.log("HALOOOOOOOOOOOOO");
+
     changeIcon(removeAllFilters);
     setNumPosts(4);
     setFilter("");
@@ -83,7 +82,6 @@ function FilterButtons(props) {
     <div className="filter-container">
       <div>
         {icon.map((icon) => {
-          console.log(icon.active);
           let btnClick = handleFilterClick;
           if (icon.removefilter) {
             btnClick = removeFilter;

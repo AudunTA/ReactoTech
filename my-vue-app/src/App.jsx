@@ -29,9 +29,7 @@ function App() {
           setLoader(false);
         }
         // Setting our `posts` state to the API data we received
-        console.log(json);
         setPosts(json);
-        console.log("REEEEEEEEEEEEEEEEEEEEEEE");
       } catch (e) {
         console.log(e);
       }
@@ -43,7 +41,6 @@ function App() {
     setCartItems([...cartItems, ele]);
   };
   const handleSeeAll = () => {
-    console.log(numPosts);
     if (numPosts < 10) {
       setNumPosts(100);
     } else {

@@ -20,7 +20,6 @@ function ProductPage(props) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShouldRender(props.loader);
-      console.log(posts[7].reviews.length);
     }, 100);
 
     return () => {

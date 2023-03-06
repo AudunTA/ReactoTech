@@ -24,7 +24,7 @@ function Specific(props) {
     products.map((ele) => {
       if (ele.id === productid) {
         setSpesific(ele);
-        console.log(ele.rating);
+
         setStars(ele.rating);
         setReviews(ele.reviews);
       }
