@@ -2,7 +2,7 @@
   "name": "reactotech",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://AudunTA.github.io/ReactoTech",
+  "homepage": "http://AudunTA.github.io/ReactoTech",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
