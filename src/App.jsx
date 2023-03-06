@@ -52,7 +52,7 @@ function App() {
     <>
       <Header numCartItem={cartItems.length} />
       <Suspense fallback={<div className="container">Loading...</div>}>
-        <Routes>
+        <Routes basename="/test_repository">
           <Route path="/cart" element={<Cart cart={cartItems} />} />
           <Route
             path="/"
