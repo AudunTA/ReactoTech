@@ -22,7 +22,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
     "react-skeleton-loader-pulse": "^1.2.0",
-    "sort-by": "^1.2.0",
+    "sort-by": "^0.0.2",
     "zustand": "^4.3.3"
   },
   "devDependencies": {
