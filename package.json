@@ -1,6 +1,6 @@
 {
   "name": "reactotech",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "homepage": "http://AudunTA.github.io/ReactoTech",
   "type": "module",
