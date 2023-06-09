@@ -18,7 +18,7 @@ You can see a live demo of the ReactoTech store [here](https://audunta.github.io
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/ecom-store.git
+git clone https://github.com/AudunTA/ReactoTech.git
 ```
 2. Install the dependencies:
 ```
